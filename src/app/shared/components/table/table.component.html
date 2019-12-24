@@ -1,0 +1,48 @@
+<div class="main-table">
+    <thead>
+        <tr>
+            <th *ngFor="let column of columns">{{ column }}</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr
+            class="main-table__row"
+            *ngFor="let element of mainService.elementData"
+            (dblclick)="goToFolder(element.id)"
+        >
+            <td [ngSwitch]="element.fileTypeEnum">
+                <mat-icon
+                    *ngSwitchCase="'FOLDER'"
+                    class="main-table__icon-folder"
+                >folder</mat-icon>
+                <mat-icon
+                    *ngSwitchCase="'FILE'"
+                    class="main-table__icon-file"
+                >description</mat-icon>
+            </td>
+
+            <td class="main-table__col">
+                {{ element.name }}
+                <mat-icon
+                    (click)="openDialog(element.id)"
+                    class="main-table__icon-edit"
+                    title="Редактировать имя"
+                >edit</mat-icon>
+            </td>
+
+            <td>{{ element.fileTypeEnum.toLowerCase() }}</td>
+
+            <td>{{ element.updatedAt | date: "mediumDate" }}</td>
+            
+            <td>
+
+                <div
+                    (click)="mainService.removeElement(element.id)"
+                    class="main-table__button-remove"
+                    title="Удалить"
+                >&times;</div>
+            </td>
+        </tr>
+    </tbody>
+</div>

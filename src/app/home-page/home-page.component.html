@@ -1,0 +1,21 @@
+<div class="home-page">
+    <div class="container">
+        <div class="home-page__content">
+            <div class="home-page__buttons">
+                <app-file-load-button title="Добавить файл"></app-file-load-button>
+                <app-button
+                    (click)="openDialog()"
+                    title="Добавить папку"
+                ></app-button>
+                <app-button
+                    *ngIf="mainService.folderQueue.length > 0"
+                    (click)="goBack()"
+                    title="Назад"
+                    theme="green"
+                ></app-button>
+            </div>
+            
+            <app-table></app-table>
+        </div>
+    </div>
+</div>

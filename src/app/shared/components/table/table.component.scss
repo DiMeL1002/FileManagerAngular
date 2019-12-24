@@ -1,0 +1,54 @@
+.main-table {
+    $self: &;
+
+    width: 100%;
+    border-collapse: collapse;
+
+    & th, td {
+        border: 1px solid rgba(0, 0, 0, .12);
+        padding: 10px 100px;
+        text-align: center;
+
+        &:first-child, &:last-child { padding: 10px 20px; }
+    }
+
+    & tr {
+        cursor: pointer;
+
+        &:hover { background-color: rgba(0, 0, 0, 0.1); }
+    }
+
+    &__row:hover {
+        #{$self}__icon-edit { display: flex; }
+    }
+
+    &__col { position: relative; }
+
+    &__icon {
+        &-folder { color: orange }
+
+        &-file { color: blue }
+
+        &-edit {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1rem;
+            cursor: pointer;
+
+            &:hover { color: orange; }
+        }
+    }
+
+    &__button-remove {
+        padding: 5px;
+        background-color: red;
+        cursor: pointer;
+
+        &:hover { background-color:rgb(141, 35, 35); }
+    }
+}

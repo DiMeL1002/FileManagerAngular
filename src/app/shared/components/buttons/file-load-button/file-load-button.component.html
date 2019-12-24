@@ -1,0 +1,14 @@
+<div class="file-load-button">
+    <button
+        class="file-load-button__button"
+        type="button"
+        (click)="onClick()"
+    >{{ title }}</button>
+
+    <input
+        (change)="onChange($event)"
+        class="file-load-button__input"
+        type="file"
+        #inputFileLoader
+    >
+</div>

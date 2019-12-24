@@ -1,0 +1,10 @@
+.home-page {
+    &__content { padding: 25px; }
+    &__buttons {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 25px;
+
+        & > *:not(:last-child) { margin-right: 20px; }
+    }
+}

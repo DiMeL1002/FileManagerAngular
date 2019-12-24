@@ -1,0 +1,17 @@
+.file-load-button {
+
+    &__button {
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        background-color: rgb(116, 185, 231);
+        font-size: 1rem;
+        cursor: pointer;
+        transition: opacity 0.3s linear;
+
+        &:hover { opacity: 0.8; }
+    }
+
+    &__input { display: none; }
+}

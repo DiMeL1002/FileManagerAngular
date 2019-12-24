@@ -1,0 +1,19 @@
+<div class="rename-modal">
+    <h1>Изменение имени</h1>
+    
+    <div>
+        <p>Введите новое имя:</p>
+        <input (input)="onInput($event)">
+
+        <div class="rename-modal__buttons">
+            <app-button
+                title="Ок"
+                (click)="renameElement()"
+            ></app-button>
+            <app-button
+                title="Отмена"
+                (click)="closeModal()"
+            ></app-button>
+        </div>
+    </div>
+</div>

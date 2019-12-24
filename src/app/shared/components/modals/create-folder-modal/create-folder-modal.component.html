@@ -1,0 +1,19 @@
+<div class="create-folder-modal">
+    <h1>Добавление папки</h1>
+    
+    <div>
+        <p>Введите название папки:</p>
+        <input (input)="onInput($event)">
+
+        <div class="create-folder-modal__buttons">
+            <app-button
+                title="Ок"
+                (click)="createFolder()"
+            ></app-button>
+            <app-button
+                title="Отмена"
+                (click)="closeModal()"
+            ></app-button>
+        </div>
+    </div>
+</div>
